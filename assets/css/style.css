@@ -261,18 +261,9 @@ body.nav-open .mobile-panel{ display: block; }
   min-height: 88vh;
   display: flex;
   align-items: center;
-  padding-bottom: 80px;
 }
 .hero::after {
-  content: "";
-  position: absolute;
-  bottom: -40px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: var(--paper);
-  transform: skewY(-2deg);
-  z-index: 5;
+  display: none;
 }
 .hero-video{
   position: absolute;
@@ -352,6 +343,7 @@ body.nav-open .mobile-panel{ display: block; }
   position: relative;
   overflow: hidden;
 }
+.page-hero .container{ position: relative; z-index: 2; }
 .page-hero::before{
   content: "";
   position: absolute; inset: 0;
@@ -373,7 +365,7 @@ body.nav-open .mobile-panel{ display: block; }
   background: linear-gradient(100deg, rgba(10,28,40,.96) 0%, rgba(10,28,40,.88) 42%, rgba(10,28,40,.6) 75%, rgba(10,28,40,.45) 100%);
   z-index: 1;
 }
-.page-hero .container{ position: relative; z-index: 2; }
+.page-hero .container{ position: relative; z-index: 3; }
 .breadcrumb{
   font-size: 13px;
   color: rgba(255,255,255,.55);
@@ -385,34 +377,94 @@ body.nav-open .mobile-panel{ display: block; }
 .page-hero h1{ color: var(--white); font-size: clamp(34px, 4.6vw, 52px); max-width: 18ch; }
 .page-hero .hero-lead{ max-width: 56ch; margin-bottom: 0; }
 
-/* Bubbly elements */
+/* ============================================================
+   Bubble background effect
+   ============================================================ */
+
+/* Base: sections that carry bubbles need position:relative */
 .bubble-bg {
   position: relative;
+}
+
+/* CTA banner clips its own bubbles — keep overflow hidden there */
+.cta-banner.bubble-bg {
   overflow: hidden;
 }
-.bubble-bg::after {
-  content: "";
+
+/* Shared bubble layer — injected via .bubbles wrapper inside the section */
+.bubbles {
   position: absolute;
-  top: -10%;
-  right: -5%;
-  width: 40%;
-  height: 60%;
-  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%); animation: float 20s infinite ease-in-out;
-  border-radius: 50%;
-  z-index: 1;
+  inset: 0;
   pointer-events: none;
+  z-index: 1;
 }
-.bubble-bg::before {
-  content: "";
+
+/* Clip bubbles inside sections that need it */
+.cta-banner .bubbles {
+  overflow: hidden;
+}
+
+/* Stats section: bubbles contained within the section — they rise and fade within the dark bg */
+.stats-section .bubbles {
+  overflow: hidden;
+  inset: 0;
+  z-index: 2;
+}
+.bubbles span {
   position: absolute;
-  bottom: -10%;
-  left: -5%;
-  width: 30%;
-  height: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%); animation: float 20s infinite ease-in-out; animation-delay: -10s;
+  display: block;
   border-radius: 50%;
-  z-index: 1;
-  pointer-events: none;
+  opacity: 0;
+  animation: bubble-rise linear infinite;
+}
+
+/* Light bubbles (on dark navy / blue backgrounds) */
+.bubble-bg .bubbles span {
+  background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.05) 50%, transparent 70%);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Warm bubbles (on paper / paper-alt backgrounds) */
+.bubble-bg.bubble-warm .bubbles span {
+  background: radial-gradient(circle at 35% 35%, rgba(47,111,176,0.10) 0%, rgba(47,111,176,0.03) 50%, transparent 70%);
+  border: 1px solid rgba(47,111,176,0.08);
+}
+
+/* Individual bubble sizes, positions & timing */
+.bubbles span:nth-child(1)  { left: 8%;   width: 80px;  height: 80px;  animation-duration: 18s; animation-delay: 0s;    bottom: -80px;  }
+.bubbles span:nth-child(2)  { left: 18%;  width: 130px; height: 130px; animation-duration: 24s; animation-delay: -6s;   bottom: -130px; }
+.bubbles span:nth-child(3)  { left: 32%;  width: 55px;  height: 55px;  animation-duration: 14s; animation-delay: -3s;   bottom: -55px;  }
+.bubbles span:nth-child(4)  { left: 46%;  width: 190px; height: 190px; animation-duration: 28s; animation-delay: -12s;  bottom: -190px; }
+.bubbles span:nth-child(5)  { left: 58%;  width: 70px;  height: 70px;  animation-duration: 16s; animation-delay: -8s;   bottom: -70px;  }
+.bubbles span:nth-child(6)  { left: 68%;  width: 110px; height: 110px; animation-duration: 22s; animation-delay: -2s;   bottom: -110px; }
+.bubbles span:nth-child(7)  { left: 78%;  width: 50px;  height: 50px;  animation-duration: 13s; animation-delay: -16s;  bottom: -50px;  }
+.bubbles span:nth-child(8)  { left: 85%;  width: 160px; height: 160px; animation-duration: 26s; animation-delay: -9s;   bottom: -160px; }
+.bubbles span:nth-child(9)  { left: 3%;   width: 95px;  height: 95px;  animation-duration: 20s; animation-delay: -14s;  bottom: -95px;  }
+.bubbles span:nth-child(10) { left: 92%;  width: 65px;  height: 65px;  animation-duration: 17s; animation-delay: -4s;   bottom: -65px;  }
+
+/* Large ambient glow bubbles — slow, barely visible, purely decorative */
+.bubbles span:nth-child(11) {
+  left: -8%; top: 10%;
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 65%);
+  border: none;
+  opacity: 1;
+  animation: bubble-drift 32s ease-in-out infinite;
+  animation-delay: 0s;
+}
+.bubbles span:nth-child(12) {
+  right: -10%; bottom: 5%;
+  width: 340px; height: 340px;
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 65%);
+  border: none;
+  opacity: 1;
+  animation: bubble-drift 40s ease-in-out infinite;
+  animation-delay: -18s;
+}
+/* Warm variant ambient glow */
+.bubble-bg.bubble-warm .bubbles span:nth-child(11),
+.bubble-bg.bubble-warm .bubbles span:nth-child(12) {
+  background: radial-gradient(circle, rgba(47,111,176,0.07) 0%, transparent 65%);
 }
 
 /* ============================================================
@@ -428,6 +480,9 @@ section{ padding: 92px 0; position: relative; }
 .bg-navy{ background: var(--navy-deep); color: var(--white); }
 .bg-navy h2{ color: var(--white); }
 .bg-navy .eyebrow{ color: var(--blue-light); }
+
+/* ensure content inside bubble sections always clears the bubble layer */
+.bubble-bg > .container { position: relative; z-index: 1; }
 
 /* services index list (numbered, editorial) */
 .service-list{ border-top: 1px solid var(--line); opacity: 0.8; }
@@ -493,6 +548,28 @@ section{ padding: 92px 0; position: relative; }
   border-right: 1px solid var(--line);
 }
 .feature-cols .feature:last-child{ border-right: none; }
+
+/* dark navy variant */
+.feature-cols-dark {
+  background: transparent;
+  border-color: transparent;
+  gap: 16px;
+  opacity: 1;
+}
+.feature-cols-dark .feature {
+  background: var(--navy-deep);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+.feature-cols-dark .feature .num {
+  color: var(--blue-light);
+}
+.feature-cols-dark .feature h3 {
+  color: var(--white);
+}
+.feature-cols-dark .feature p {
+  color: rgba(255,255,255,0.6);
+}
 .feature-cols-5{ grid-template-columns: repeat(5, 1fr); }
 @media (max-width: 1100px){
   .feature-cols-5{ grid-template-columns: repeat(3, 1fr); }
@@ -607,42 +684,21 @@ section{ padding: 92px 0; position: relative; }
   background: var(--navy-deep);
   color: var(--white);
   overflow: hidden;
-  padding: 140px 0;
-}
-.stats-section.bubble-bg::after, .stats-section.bubble-bg::before {
-  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-}
-.stats-section::before {
-  content: "";
-  position: absolute;
-  top: -40px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: var(--navy-deep);
-  transform: skewY(-2deg);
-  z-index: 2;
-}
-.stats-section::after {
-  content: "";
-  position: absolute;
-  bottom: -40px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: var(--navy-deep);
-  transform: skewY(-2deg);
-  z-index: 2;
+  padding: 92px 0;
 }
 .stats-section .container {
   position: relative;
   z-index: 3;
 }
-.stats-section > *:first-child:not(.container) {
+.stats-section .dot-grid {
   position: absolute; inset: 0;
   background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.06) 1px, transparent 0);
   background-size: 26px 26px;
   z-index: 1;
+  pointer-events: none;
+}
+.stats-section .bubbles {
+  z-index: 2;
 }
 .stats-layout{
   position: relative;
@@ -948,3 +1004,17 @@ textarea{ resize: vertical; min-height: 130px; }
   .hero-actions .btn{ padding: 14px 22px; font-size: 13.5px; }
 }
 @keyframes float { 0%, 100% { transform: translateY(0) translateX(0); } 50% { transform: translateY(-20px) translateX(10px); } }
+
+@keyframes bubble-rise {
+  0%   { transform: translateY(0) translateX(0) scale(1);    opacity: 0; }
+  5%   { opacity: .55; }
+  80%  { opacity: .15; }
+  100% { transform: translateY(-110vh) translateX(30px) scale(1.1); opacity: 0; }
+}
+
+@keyframes bubble-drift {
+  0%   { transform: translateY(0)   translateX(0); }
+  33%  { transform: translateY(-28px) translateX(18px); }
+  66%  { transform: translateY(12px)  translateX(-14px); }
+  100% { transform: translateY(0)   translateX(0); }
+}
