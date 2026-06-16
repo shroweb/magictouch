@@ -128,23 +128,32 @@ p{ margin: 0 0 1em; }
 .brand{
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   line-height: 1;
+  text-decoration: none;
 }
+.brand-icon{
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: transform .2s ease;
+}
+.brand:hover .brand-icon{ transform: rotate(20deg) scale(1.08); }
 .brand-text{ display: flex; flex-direction: column; }
 .brand-text strong{
   font-family: var(--serif);
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--white);
   letter-spacing: -.01em;
 }
 .brand-text small{
-  font-size: 10.5px;
-  letter-spacing: .22em;
-  color: var(--blue-light);
-  font-weight: 600;
-  margin-top: 5px;
+  font-size: 10px;
+  letter-spacing: .26em;
+  color: rgba(255,255,255,0.65);
+  font-weight: 500;
+  margin-top: 4px;
+  text-transform: uppercase;
 }
 .nav-main{
   display: flex;
@@ -558,7 +567,7 @@ section{ padding: 92px 0; position: relative; }
 /* why section */
 .why-section {
   background: var(--navy-deep);
-  padding: 80px 0 0;
+  padding: 0;
 }
 .why-head {
   margin-bottom: 56px;
