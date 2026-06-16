@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="site-header" id="site-header">
   <div class="container">
     <a href="index.html" class="brand">
       <span class="brand-text"><strong>Magic Touch</strong><small>GALWAY · EST. 2019</small></span>
@@ -49,10 +49,17 @@
     <a href="power-washing.html" class="mp-sub">Power &amp; Soft Washing</a>
     <a href="domestic-cleaning.html" class="mp-sub">Domestic Cleaning</a>
     <a href="contact.html">Contact</a>
-    <a href="tel:+353892197838">Call 089 219 7838</a>
+    <div class="mobile-panel-cta">
+      <a href="tel:+353892197838" class="btn btn-blue">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.92 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Now
+      </a>
+      <a href="contact.html" class="btn btn-mobile-outline">Get a Quote</a>
+    </div>
   </div>
 </header>
 
+<!-- ===== HERO ===== -->
 <section class="hero">
   <video class="hero-video" autoplay muted loop playsinline poster="assets/img/window-skyscraper.jpg">
     <source src="assets/video/hero.mp4" type="video/mp4">
@@ -60,7 +67,19 @@
   <div class="hero-overlay"></div>
   <div class="container hero-grid hero-grid-solo">
     <div>
-      <div class="eyebrow">High Standard Cleaning Services · Est. 2019</div>
+      <a href="https://www.google.com/search?q=magic+touch+galway#lrd=0x485b9799cc273881:0x6ae7c54a3818af67,1,,,," target="_blank" rel="noopener" class="hero-trust">
+        <span class="g-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+        </span>
+        <span class="t-stars">★★★★★</span>
+        <span class="t-sep"></span>
+        <span class="t-text">37 Google reviews</span>
+      </a>
       <h1>Cleaning Galway can<br><em>actually rely on.</em></h1>
       <p class="hero-lead">Office cleaning, deep cleans, windows, floors and exterior washing — handled by one local team that turns up when it says it will. Over 1,000 jobs done since 2019, from single offices to multi-site contracts.</p>
       <div class="hero-actions">
@@ -69,34 +88,56 @@
       </div>
     </div>
   </div>
+  <button class="hero-scroll" onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})" aria-label="Scroll down">
+    <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+    <span>Scroll</span>
+  </button>
 </section>
 
-<section class="why-section">
+<!-- ===== WHY SECTION ===== -->
+<section class="why-section" id="why">
   <div class="container">
     <div class="why-head">
       <div class="eyebrow">Why Magic Touch</div>
-      <h2>High Standard Cleaning Services · Est. 2019</h2>
+      <h2>High Standard Cleaning Services</h2>
     </div>
   </div>
   <div class="feature-cols feature-cols-dark feature-cols-fullwidth">
     <div class="feature">
-      <span class="num">01</span>
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
       <h3>Dedicated crews</h3>
       <p>The same people clean your building every time — not a rotating roster of strangers.</p>
     </div>
     <div class="feature">
-      <span class="num">02</span>
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
       <h3>Built around your hours</h3>
       <p>Early morning, evening, night or weekend slots, so cleaning never gets in the way of business.</p>
     </div>
     <div class="feature">
-      <span class="num">03</span>
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.92 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+      </div>
       <h3>24/7 call-out</h3>
       <p>Spills, break-ins, burst pipes — we're reachable around the clock for urgent jobs.</p>
     </div>
   </div>
 </section>
 
+<!-- ===== SERVICES ===== -->
 <section id="services" class="bg-alt">
   <div class="container">
     <div class="section-head fade-up">
@@ -163,8 +204,100 @@
   </div>
 </section>
 
+<!-- ===== TRUST STRIP ===== -->
+<div class="trust-strip">
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+    Fully insured
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    Galway-based team
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    Est. 2019
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+    1,000+ satisfied clients
+  </div>
+</div>
 
+<!-- ===== BIO SECTION ===== -->
+<section class="bio-section">
+  <div class="container">
+    <div class="bio-grid">
+      <div class="bio-media">
+        <div class="bio-photo">
+          <img src="assets/img/team-technician-atrium-v2.jpg" alt="Magic Touch Galway team at work" loading="lazy">
+        </div>
+        <div class="bio-badge">
+          <strong>7</strong>
+          <span>Years in<br>Galway</span>
+        </div>
+      </div>
+      <div class="bio-text">
+        <div class="eyebrow">About us</div>
+        <h2>A local crew, not a cleaning franchise.</h2>
+        <p class="lead">Magic Touch was founded by Miroslav in 2019 with one mission: deliver cleaning that actually matches what's promised — and back it up every single time.</p>
+        <p>After years working in commercial cleaning across Ireland, Miroslav saw the same problem everywhere: strong first impressions, then falling standards once the contract was signed. So he built something different — a small, hand-picked team who take real pride in the work. People who turn up on time, communicate clearly, and leave a place genuinely clean, not just surface-tidied.</p>
+        <p>Seven years and 1,000+ jobs later, Magic Touch is still the same local business. Miroslav still takes every call himself, and the same crew that cleaned your building last month will be there next month.</p>
+        <div class="bio-sig">
+          <div class="bio-sig-info">
+            <strong>Miroslav</strong>
+            <span>Founder &amp; Director, Magic Touch Galway</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ===== HOW IT WORKS ===== -->
+<section class="process-section">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="eyebrow">Simple process</div>
+      <h2>From first call to spotless result.</h2>
+      <p style="color:var(--ink-soft);font-size:16px;">Three straightforward steps — no hard sell, no hidden extras, no surprises on the invoice.</p>
+    </div>
+    <div class="process-row">
+      <div class="process-step fade-up">
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <span class="step-num">01</span>
+        <h3>Tell us what you need</h3>
+        <p>Call, email, or fill in our quote form. We'll ask the right questions to understand your space, frequency, and schedule — no sales script.</p>
+        <div class="step-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <span class="step-num">02</span>
+        <h3>We plan around you</h3>
+        <p>We schedule around your opening hours, give you a straight price, and assign the same crew to your site from day one.</p>
+        <div class="step-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <span class="step-num">03</span>
+        <h3>Spotless, every time</h3>
+        <p>We turn up, do the job to standard, and we're done before your day starts. If anything's off, tell us and we'll fix it same day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
 <section class="stats-section bubble-bg">
   <div class="dot-grid"></div>
   <div class="bubbles">
@@ -188,6 +321,7 @@
   </div>
 </section>
 
+<!-- ===== CLIENT LOGOS ===== -->
 <section>
   <div class="container">
     <div class="section-head">
@@ -214,6 +348,7 @@
   </div>
 </section>
 
+<!-- ===== REVIEWS ===== -->
 <section class="bg-alt">
   <div class="container">
     <div class="reviews-block">
@@ -261,6 +396,7 @@
   </div>
 </section>
 
+<!-- ===== CTA BANNER ===== -->
 <section class="cta-banner bubble-bg">
   <div class="bubbles">
     <span></span><span></span><span></span><span></span><span></span>
@@ -272,10 +408,11 @@
       <h2>Get a free, no-obligation estimate.</h2>
       <p>Tell us the space and the schedule — we'll get back to you with a straight answer, not a sales call.</p>
     </div>
-    <a href="contact.html" class="btn" style="background:var(--navy-deep); color:var(--white);">Request a Free Estimate</a>
+    <a href="contact.html" class="btn btn-cta-dark">Request a Free Estimate</a>
   </div>
 </section>
 
+<!-- ===== FOOTER ===== -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-top">

@@ -1,6 +1,14 @@
 // Magic Touch Galway — site behaviour
 document.addEventListener('DOMContentLoaded', function () {
 
+  // Header scroll shadow
+  var header = document.getElementById('site-header');
+  if (header) {
+    window.addEventListener('scroll', function () {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  }
+
   // Mobile nav toggle
   var toggle = document.querySelector('.nav-toggle');
   if (toggle) {
