@@ -1,0 +1,25 @@
+Photo credits — Magic Touch Galway site
+=========================================
+Most photos are sourced via rawpixel.com under CC0 (public domain, no
+attribution required). One photo requires attribution under its license:
+
+- power-driveway.jpg
+  "Car washing activity at a residential driveway" by Shixart1985
+  Source: https://commons.wikimedia.org/wiki/File:Car_washing_activity_at_a_residential_driveway.jpg
+  License: CC BY 2.0 — https://creativecommons.org/licenses/by/2.0/
+
+All other images in this folder: CC0 / public domain via rawpixel.com,
+no attribution required, free for commercial use.
+
+Hero video (assets/video/hero.mp4) is the client's own footage, pulled
+from the live magictouchgalway.com site (Wix-hosted asset, video ID
+84770f_0512b95c6bd44398a825e832e08a47a5) — owned by Magic Touch Galway.
+
+window-squeegee-seaview.jpg and window-technician-corner.jpg are pulled
+from the live magictouchgalway.com/window-cleaning page — the client's
+own real jobsite photo (technician cleaning a corner window) and a
+photo already in use on their site — owned by Magic Touch Galway.
+
+Recommendation: swap these stand-ins for the client's own jobsite
+photography as soon as it's available — real photos of their actual
+crew and premises will do more for trust than any stock image.
